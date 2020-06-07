@@ -1,6 +1,5 @@
 import React from 'react'
 // import GBAon from '../img/gba-on.png';
-// import GBAoff from '../img/gba-off.png'
 
 import './Screen.css'
 
@@ -9,6 +8,13 @@ class Screen extends React.Component {
         nameofstate: true
     }
 
+    componentDidMount() {
+        setTimeout(() => {
+            this.setState({
+                isPowerOff: false
+            })
+        }, 1000)
+    }
 
     componentDidMount = async()=> {
         console.log('rendering screen.js')
@@ -18,13 +24,45 @@ class Screen extends React.Component {
     }
 
     render() {
-        console.log('rendering screen.js RENDER')
+        
         return (
-            <div>
-                {/* <img src={GBAon} alt="GBA switched on" />      */}
-            </div>
+            <section className="gamestate">
+                <img src={GBAon} alt="GBA" />
+                <p className ="disc">All official material from the POKEMON series, including characters and names are trademarks and copyright property of NINTENDO.</p>
+                <p className ="disc">For educational purposes only.</p>
+            </section>
         )
     }
 }
 
 export default Screen
+
+class GBA extends React.Component {
+    state = {
+        isPowerOff: true
+    }
+    
+    componentDidMount() {
+        setTimeout(() => {
+            this.setState({
+                isPowerOff: false
+            })
+        }, 1000)
+    }
+
+    render () {
+        if(this.state.isPowerOff === true) {
+        return (
+            <section className="gamestate">
+                <img src={GBAoff} alt="GBA" />
+            </section>
+        );
+        } else {
+        return (
+            
+        );
+        }
+    }  
+}
+
+export default GBA

@@ -1,8 +1,18 @@
 import React from 'react'
 import GBAoff from '../img/gba-off.png'
-import GBAon from '../img/gba-on.png';
+import GBAon from '../img/gba-on.png'
+import UIfx from 'uifx'
+import GBAStartup from '../audio/gba-startup.mp3'
 
 import './GBA.css'
+
+const GBAsound = new UIfx(
+    GBAStartup,
+    {
+      volume: 0.4,
+      throttleMs: 100
+    }
+)
 
 class GBA extends React.Component {
     state = {
@@ -10,13 +20,13 @@ class GBA extends React.Component {
     }
     
     componentDidMount() {
-        console.log('rendering GBA.js')
         setTimeout(() => {
             this.setState({
                 isPowerOff: false
             })
         }, 1000)
     }
+
     render () {
         if(this.state.isPowerOff === true) {
         return (
@@ -28,20 +38,13 @@ class GBA extends React.Component {
         return (
             <section className="gamestate">
                 <img src={GBAon} alt="GBA" />
-                <p className ="intro">something here</p>
+                <audio src={GBAsound.play()} />
+                <p className ="intro">REACT | POKEAPI</p>
+                <p className ="intro2">Bex Birkett</p>
             </section>
         );
         }
-    }
-    // render() {
-    //     console.log('rendering GBA.js RENDER')
-    //     return(
-    //         <section className="PowerCheck">
-    //             {this.state.isPowerOff ? <img src={GBAoff} alt="GBA switched off" /> 
-    //             : <img src={GBAon} alt="GBA switched on" />}
-    //         </section>
-    //     )
-    // }   
+    }  
 }
 
 export default GBA
