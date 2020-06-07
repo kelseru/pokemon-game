@@ -3,10 +3,7 @@ import './styling/GameMenu.css'
 
 function GameMenu() {
    return (
-      <section className="loading">
-         <img src={Spinner}alt="Spinner" />
-         <p>Loading<span></span></p>
-      </section>
+      <p>this will be the main menu</p>
    )
 }
 

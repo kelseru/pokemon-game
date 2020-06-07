@@ -1,4 +1,4 @@
-.loading {
+section {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -9,18 +9,20 @@
     transform: translate(-50%, -50%);
 }
 
-img {
-    width: 10vw;
-    animation: rotate-scale-up 2s linear infinite both;
-    margin-bottom: 100px;
-}
-
 p {
     font-family: 'VT323', monospace;
     font-size: 20px;
     margin: 0px;
 }
 
+/* pokeball animation */
+#pokeball img {
+    width: 10vw;
+    animation: rotate-scale-up 2s linear infinite both;
+    margin-bottom: 100px;
+}
+
+/* elipsis animation  */
 span::before {
     animation: dots 2s linear infinite;
     content: ''

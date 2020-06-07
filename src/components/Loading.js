@@ -1,22 +1,17 @@
 import React from 'react'
 import Spinner from '../img/pokeball.png'
-import './styling/Loading.css'
-import { Redirect } from "react-router-dom";
-import { ReactComponent } from '*.svg';
 
-class Loading extends React.Component {
-   render() {
+import './Loading.css'
 
-
-      return (
-         <section className="loading">
+function Loading() {
+   return(
+      <section className="loading">
+         <div id="pokeball">
             <img src={Spinner}alt="Spinner" />
-            <p>Loading<span></span></p>
-         </section>
-      )   
-   }  
+         </div>
+         <p>Loading<span></span></p>
+      </section>
+   )
 }
-
-// loaded = false then stay on loading, once true then redirect to gamestart component
 
 export default Loading
