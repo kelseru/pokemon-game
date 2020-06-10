@@ -1,13 +1,84 @@
-.main {
-    height: calc(100vh - 135px);
-    overflow-y: auto;
-  }
+.App {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
 
-@keyframes FadeAnim {
-  0% {
-      opacity: 0;
+p {
+  font-family: 'VT323', monospace;
+  font-size: 20px;
+  margin: 0px;
+}
+
+.consoleOn img {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 70vw;
+}
+
+/* spinner */
+.Loading {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+/* pokeball animation */
+#pokeball img {
+  width: 10vw;
+  animation: rotate-scale-up 2s linear infinite both;
+  margin-bottom: 100px;
+}
+
+/* elipsis animation  */
+span::before {
+  animation: dots 2s linear infinite;
+  content: ''
+}
+
+/* elipsis keyframes */
+@keyframes dots {
+  0%, 20% {
+      content: '.'    
   }
-  100% {
-      opacity: 1;
+  40%{
+      content: '..'    
+  } 
+  60%{
+      content: '...'    
   }
+  90%, 100%{
+      content: ''    
   }
+}
+
+/* pokeball keyframes, do not touch! :) */
+@-webkit-keyframes rotate-scale-up {
+0% {
+  transform: scale(1) rotateZ(0);
+}
+50% {
+  transform: scale(2) rotateZ(180deg);
+}
+100% {
+  transform: scale(1) rotateZ(360deg);
+}}
+
+@keyframes rotate-scale-up {
+0% {
+  transform: scale(1) rotateZ(0);
+}
+50% {
+  transform: scale(2) rotateZ(180deg);
+}
+100% {
+  transform: scale(1) rotateZ(360deg);
+}}
