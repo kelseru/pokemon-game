@@ -12,7 +12,7 @@ import './SystemBoot.css'
 const GBAsound = new UIfx(
     GBAStart,
     {
-      volume: 0.2,
+      volume: 0.1,
       throttleMs: 100
     }
 )
@@ -24,23 +24,17 @@ class SystemBoot extends React.Component {
     }
     
     componentDidMount() {
+        console.log('component mount')
         setTimeout(() => {
             this.setState({
                 isPowerOff: false
             })
         }, 1000)
-    }
-
-    componentDidUpdate(){
         setTimeout(() => {
             this.setState({
                 ready: true
             })
         }, 4000)
-    }
-
-    componentWillUnmount(){
-        clearTimeout(this.setTimeout)
     }
     
     render () {
