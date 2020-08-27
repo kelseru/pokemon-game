@@ -1,12 +1,13 @@
 // key imports
 import React from 'react'
-import './App.css'
 import axios from 'axios'
 
 // components
 import GBAon from './img/gba-on.png'
 import Spinner from './img/pokeball.png'
-import SystemBoot from "./components/SystemBoot.js"
+import SystemBoot from './components/SystemBoot.js'
+
+import './App.css'
 
 class App extends React.Component {
     state = {
@@ -37,10 +38,12 @@ class App extends React.Component {
                         <p>LOADING<span></span></p>
                     </section>    
                 ) : (
-                    <section className="consoleOn">
-                        <img src={GBAon} alt="GBA" />
-                        <SystemBoot />
-                    </section>
+                    <div>
+                        <div className="consoleOn">
+                            <img src={GBAon} alt="GBA" />
+                            <SystemBoot />
+                        </div>
+                    </div>   
                 )}
             </div>
         );
